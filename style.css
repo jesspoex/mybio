@@ -1,0 +1,243 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #404040;
+}
+
+#container {
+  position: absolute;
+  width: 100%;
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+
+#fadeBackground {
+  position: absolute;
+  width: 100%;
+  max-width: 860px;
+  height: 628px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.97408) 29.17%, rgba(255, 255, 255, 0.82) 52.08%, rgba(255, 255, 255, 0) 100%);
+}
+
+.smallContainer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 32px;
+  gap: 32px;
+  width: 248px;
+  background: #FFFFFF;
+  border: 1px solid #EDE4F2;
+  box-shadow: 0px 2px 20px rgba(220, 205, 228, 0.5);
+  border-radius: 10px;
+  z-index: 999;
+
+}
+.smallContainer:hover {
+  background: #f0f0f0;
+}
+
+.smallContainer:active {
+  background: #dedede;
+  border: 1px #d4d4d4 solid;
+}
+
+.mediumContainer {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  max-width: 780px;
+  padding:20px;
+  background: #FFFFFF;
+  border: 1px solid #EDE4F2;
+  box-shadow: 0px 2px 20px rgba(220, 205, 228, 0.5);
+  border-radius: 10px;
+  z-index: 999;
+  flex-wrap: wrap;
+  margin: 10px 10px 20px 10px;
+}
+
+.largeContainer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 32px;
+  gap: 32px;
+  max-width: 780px;
+  background: #FFFFFF;
+  border: 1px solid #EDE4F2;
+  box-shadow: 0px 2px 20px rgba(220, 205, 228, 0.5);
+  border-radius: 10px;
+  z-index: 999;
+  margin: 0 10px 86px 10px;
+}
+
+#headerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.97408) 29.17%, rgba(255, 255, 255, 0.82) 52.08%, rgba(255, 255, 255, 0) 100%);
+  z-index: 999;
+  margin-top: 60px;
+}
+
+#profilePicture {
+  width: 120px;
+  background: url(.png);
+  border-radius: 10000px;
+}
+
+#name {
+  width: 170px;
+  font-family: 'PoppinsBold';
+  font-size: 28px;
+  align-items: center;
+  text-align: center;
+  color: #404040;
+}
+
+.donateCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+  max-width: 300px;
+  background: #FBF8FB;
+  border-radius: 20px;
+}
+
+#lightningAddress {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4px 8px;
+  gap: 4px;
+  
+  max-width: 501px;
+  background: #FFFFFF;
+  border: 1px solid #EDE4F2;
+  border-radius: 10px;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('assets/Poppins-Regular.ttf') format('truetype'); 
+}
+
+@font-face {
+  font-family: 'PoppinsBold';
+  font-weight: 300;
+  src: url('assets/Poppins-Bold.ttf') format('truetype'); 
+}
+
+@font-face {
+  font-family: 'Spartan';
+  src: url('assets/Spartan.ttf') format('truetype'); 
+}
+
+.boldFont {
+  font-family: PoppinsBold;     color: #404040;
+}
+
+a:link { text-decoration: none; }
+
+/* Toasting for copy confirmation */
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar {
+  visibility: hidden;
+  color: #fff;
+  background-color: #333;
+  min-width: 250px;
+  margin-left: -125px;
+  border-radius: 2px;
+  padding: 16px;
+  text-align: center;
+  left: 50%;
+  bottom: 30px;
+  z-index: 1;
+  position: fixed;
+}
+
+/* This will be activated when the snackbar's class is 'show' which will be added through JS */
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations for fading in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+#donateButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 22px 16px 15px;
+  gap: 10px;
+  width: 147px;
+  height: 60px;
+  background: #867F9B;
+  border-radius: 30px;
+  border: none;
+}
+
+#donateButton:active {
+  opacity: 50%;
+}
+
